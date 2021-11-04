@@ -1,0 +1,24 @@
+#Iniciosesion {
+    margin-left: 10px;
+    padding-left: 10px;
+}
+#titulo{
+    background-color: #3f51b5;
+    color: #ffff;
+}
+#fondo{
+    border-color: black;
+    background-color: #ffff;
+    box-shadow:10px 7px 10px #1e2863; 
+}
+.modal-header{
+    display: 'block';
+    background-color: #3f51b5;
+    color: #ffff;
+}
+.modal-body{
+    background-color: #ffff;
+}
+.modal-footer{
+    background-color: #ffff;
+}
