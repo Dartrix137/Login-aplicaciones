@@ -1,4 +1,5 @@
 import React, { Fragment,useState , useEffect } from 'react';
+import { NavLink} from 'react-router-dom';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import "./Login.css";
 function Login() {
@@ -24,7 +25,7 @@ function Login() {
                             </div>
                             <div className="text-center">
                                 <button type="button" className="btn btn-secondary" onClick={()=>setModal(true)}>Registrarse</button>
-                                <button id="Iniciosesion" type="submit" className="btn btn-primary">Iniciar sesión</button>
+                                <NavLink id="Iniciosesion" className="btn btn-primary" to={"/Home"}>Iniciar sesión</NavLink>
                             </div>
                         </form>
                     </div>
