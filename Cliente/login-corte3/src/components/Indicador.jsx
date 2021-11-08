@@ -50,6 +50,14 @@ function Indicador({password}) {
                 </div>
             </div>
             <p style={{color:color()}}>{Letrero()}</p>
+
+        <div>
+            <ul style={{color:'gray'}}>
+                <li>Debe tener Mayúsculas y minúsculas</li>
+                <li>Debe tener números</li>
+                <li>Debe tener símobolos especiales (/*-Q.-´´¨¨_,;:)</li>
+            </ul>
+        </div>
         </>
     );
 }
