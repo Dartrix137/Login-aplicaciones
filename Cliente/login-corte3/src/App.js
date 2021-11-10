@@ -1,5 +1,5 @@
 /*
-Cliente corte aplicación Login corte 3
+Cliente aplicación Login corte 3
 Estudiantes:
 -Daniel Felipe Trujillo
 -Juan Sebatián Barbeti López
@@ -37,7 +37,7 @@ function App() {
   
   //Función para registrar usuario
   const Registro = () => {
-    axios.post('http://localhost:3001/registro-usuario', {
+    axios.post('https://aplicaciones-corte3.herokuapp.com/registro-usuario', {
       nombre: nombreusuario,
       contraseña: contraseña
     }).then((response) => {
@@ -48,7 +48,7 @@ function App() {
   
   //Función para actualizar usuario
   const act=()=>{
-    axios.put('http://localhost:3001/actualizar-usuario',{
+    axios.put('https://aplicaciones-corte3.herokuapp.com/actualizar-usuario',{
       nombre: nombre,
       contraseña: contraseñaactualizada
     }).then((response)=>{
@@ -64,7 +64,7 @@ function App() {
   
   //Función para verificar el usuario
   const Login = () => {
-    axios.post('http://localhost:3001/login', {
+    axios.post('https://aplicaciones-corte3.herokuapp.com/login', {
       nombre: loginnombreusuario,
       contraseña: logincontraseña
     }).then((response) => {
@@ -74,7 +74,7 @@ function App() {
       } else {
         setNombre(response.data.nombre);
         setEstado(true);
-        window.location.href="http://localhost:3000/home";
+        window.location.href="https://login-corte3.herokuapp.com/home";
       }
     });
   };
@@ -88,7 +88,7 @@ function App() {
     setLogincontraseña('');
   }
   useEffect(() => {
-    axios.get('http://localhost:3001/login').then((response) => {
+    axios.get('https://aplicaciones-corte3.herokuapp.com/login').then((response) => {
       if (response.data.loggedIn === true) {
         setNombre(response.data.usuario[0].nombre);
         setEstado(true);

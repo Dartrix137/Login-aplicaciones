@@ -24,7 +24,7 @@ let connection;//variable para almacenar las conexiones a la base de datos
 app.use(express.json());
 //Permite los métodos GET, POST y PUT de la dirección http://localhost:3000
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://login-corte3.herokuapp.com"],
     methods: ["GET", "POST", "PUT"],
     credentials: true
 }));
@@ -109,10 +109,10 @@ app.put('/actualizar-usuario', async (req, res) => {
 //Aquí se pueden cambiar las credenciales el host, el usuario y la contraseña, si no tiene contraseña dejar comillas vacias
 app.listen(app.get('port'), async () => {
     connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '12345678',
-        database: 'usuarios',
+        host: 'sql10.freesqldatabase.com',
+        user: 'sql10450228',
+        password: 'FSCuCBtpPt',
+        database: 'sql10450228',
         Promise: bluebird
     });
     console.log("Server running on port: " + app.get('port'));
