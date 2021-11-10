@@ -1,0 +1,46 @@
+Aplicación Login corte 3
+Estudiantes:
+-Daniel Felipe Trujillo
+-Juan Sebatián Barbeti López
+
+Tecnologías utilizadas:
+
+1-Para la parte del cliente se utilizó React js React es una biblioteca Javascript 
+de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar
+el desarrollo de aplicaciones en una sola página. Para los estilos se utilizó Bootstrap 
+en su versión 5
+2-Para la parte del servidor se utlizó una API desarrollada en node js, que se conecta 
+a la base de datos mediante una libreria llamada express.
+3-Para la base de datos se utilizó Mysql, la base de datos se llama usuarios.
+
+Instrucciones:
+1-Verificar si está instalado node js ejecutando el comando "npm -v", en caso de que no
+esté instalado ir a "https://nodejs.org/es/" e instalar la versión LTS de node js.
+2-Abrir el XAMPP e iniciar Mysql
+3-Abrir nuestro editor Visual de SQL(SQLyog, Mysql workbench, etc)
+4-Importar la base de datos que está dentro de la carpeta BD del proyecto
+5-Una vez creada la base de datos, vamos dentro de la carpeta Servidor del proyecto y abrir
+una terminal de Windows o cmd, en la terminal ejecutar el comando "npm i", esperar a que
+termine la instalación de los paquetes, una vez termine la instalación escribir el comando
+"npm run dev" y deberia iniciar el servidor, importante no cerrar esta terminal.
+6-Vamos dentro de la carpeta Cliente del proyecto, y luego dentro de la carpeta login-corte3, 
+abrir una terminal de Windows o cmd, en la terminal ejecutar el comando "npm i", esperar a que
+termine la instalación de los paquetes, una vez termine la instalación scribir el comando
+"npm start", esperar a que inicie el servidor y automaticamente se abrirá la aplicación en el
+navegador en la dirección http://localhost:3000, importante no cerrar esta terminal.
+
+
+Precisiones del software:
+-No se pueden repetir nombres de usuario, si se intenta crear otro usuario con el mismo nombre
+no se registra en la base de datos
+-La cantidad de logins permitidos por contraseña son 10, luego el software te pedirá cambiarla
+-No se puede cambiar la contraseña por la misma que se tiene actualmente.
+-Solamente se puede regitrar un usuario y cambiar de contraseña si la barra alcanza el nivel de
+"Bien"
+
+En caso de que la instalación no funcione se desplegó la aplicación en Heroku para poder 
+probarla ir al link:
+https://login-corte3.herokuapp.com/
+
+Proyecto en Github:
+https://github.com/Dartrix137/Login-aplicaciones

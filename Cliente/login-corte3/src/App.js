@@ -1,3 +1,10 @@
+/*
+Cliente corte aplicación Login corte 3
+Estudiantes:
+-Daniel Felipe Trujillo
+-Juan Sebatián Barbeti López
+*/
+//Importaciones
 import React, { Fragment, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Modal, ModalBody } from 'reactstrap';
@@ -9,6 +16,7 @@ import {
   BrowserRouter as Router, Switch, Route
 } from 'react-router-dom';
 function App() {
+//En react las variables se les llama estados y se definen de la siguiente forma
   const [modal, setModal] = useState(false);
   const [modalactualizar, setModalactualizar] = useState(false);
   const [nombreusuario, setNombreusuario] = useState('');
@@ -24,14 +32,21 @@ function App() {
   const Fuerzacontrseña = zxcvbn(contraseña);
   const Fuerzacontrseñaactualizada = zxcvbn(contraseñaactualizada);
   axios.defaults.withCredentials = true;
+  
+  //Funciones para la conexión con el servidor
+  
+  //Función para registrar usuario
   const Registro = () => {
     axios.post('http://localhost:3001/registro-usuario', {
       nombre: nombreusuario,
       contraseña: contraseña
     }).then((response) => {
       console.log(response);
+	  setModal(false);
     });
   };
+  
+  //Función para actualizar usuario
   const act=()=>{
     axios.put('http://localhost:3001/actualizar-usuario',{
       nombre: nombre,
@@ -46,6 +61,8 @@ function App() {
       }
     })
   };
+  
+  //Función para verificar el usuario
   const Login = () => {
     axios.post('http://localhost:3001/login', {
       nombre: loginnombreusuario,
@@ -57,12 +74,12 @@ function App() {
       } else {
         setNombre(response.data.nombre);
         setEstado(true);
-        setLogins(response.data.logins);
         window.location.href="http://localhost:3000/home";
       }
     });
   };
-
+	
+//Función para cerrar sesión
   const logout = () => {
     setNombre('');
     setEstado(false);
@@ -75,11 +92,18 @@ function App() {
       if (response.data.loggedIn === true) {
         setNombre(response.data.usuario[0].nombre);
         setEstado(true);
-        setLogins(response.data.usuario[0].logins);
+		if(response.data.usuario[0].logins==null)
+		{
+			setLogins(0);
+		}else{
+			setLogins(response.data.usuario[0].logins);
+		}
         setContraseñaactualizada('');
       }
     });
   }, []);
+  
+  //Código "html", react crea las etiquetas de html usando javascript
   return (
     <Router>
 
